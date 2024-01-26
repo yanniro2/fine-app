@@ -1,0 +1,92 @@
+{
+  "navbar": {
+    "main": [
+      {
+        "name": "Signboard",
+        "icon": "MdCreate",
+        
+        "subsections": [
+          {
+            "name": "Design",
+            "url": "/signboard/design",
+            "icon": "MdPalette"
+          },
+          {
+            "name": "Installation",
+            "url": "/signboard/installation",
+            "icon": "MdBuild"
+          }
+        ]
+      },
+      {
+        "name": "Newspaper",
+        "icon": "MdLibraryBooks",
+        "subsections": [
+          {
+            "name": "Advertise",
+            "url": "/newspaper/advertise",
+            "icon": "MdDiversity2"
+          },
+          {
+            "name": "Editorials",
+            "url": "/newspaper/editorials",
+            "icon": "MdEdit"
+          }
+        ]
+      },
+      {
+        "name": "Flyers",
+        "icon": "MdDescription",
+        "subsections": [
+          {
+            "name": "Design",
+            "url": "/flyers/design",
+            "icon": "MdDirectionsWalk"
+          },
+          {
+            "name": "Distribution",
+            "url": "/flyers/distribution",
+            "icon": "MdDevicesOther"
+          }
+        ]
+      },
+      {
+        "name": "Proposal",
+        "icon": "MdLocalActivity",
+        "url": "/proposal"
+      },
+      {
+        "name": "Social Media",
+        "icon": "MdGroups",
+        "subsections": [
+          {
+            "name": "Marketing",
+            "url": "/social-media/marketing",
+            "icon": "MdCalendarViewMonth"
+          },
+          {
+            "name": "Content",
+            "url": "/social-media/content",
+            "icon": "MdDescription"
+          }
+        ]
+      },
+      {
+        "name": "Business Cards",
+        "icon": "MdBusinessCenter",
+        "subsections": [
+          {
+            "name": "Design",
+            "url": "/business-cards/design",
+            "icon": "MdBrokenImage"
+          },
+          {
+            "name": "Printing",
+            "url": "/business-cards/printing",
+            "icon": "MdPrint"
+          }
+        ]
+      }
+    ]
+  }
+}
