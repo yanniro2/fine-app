@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from "react";
+import { usePathname } from "next/navigation";
 import navbarData from "../../data/navbarData.json";
 import {
   MdCreate,
@@ -55,24 +56,36 @@ const renderIcon = (iconName: string) => {
   };
 
   const IconComponent = iconComponents[iconName];
-  return <IconComponent className="text-primary"/>;
+  return <IconComponent className="text-primary" />;
 };
 
 const Navbar: React.FC = () => {
+  const pathname = usePathname();
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
 
-  const handleMainItemClick = (name: string) => {
+  const handleMainItemClick = (name: string, url?: string) => {
     setActiveSubmenu(activeSubmenu === name ? null : name);
+
+    // Set activeSubmenu based on the URL
+    if (url && pathname.startsWith(url)) {
+      setActiveSubmenu(name);
+    }
   };
 
   const renderNavbarItems = (items: MainNavbarItem[]) => {
     return items.map((item, index) => (
       <div
         key={index}
-        className="flex items-start px-[1rem] py-3 cursor-pointer  flex-col justify-between">
+        className={`flex items-start px-[1rem] py-3 cursor-pointer  flex-col justify-between ${
+          pathname && item.url && pathname.startsWith(item.url)
+            ? "text-red-400"
+            : ""
+        }`}>
         <div
           className="link"
-          onClick={() => item.subsections && handleMainItemClick(item.name)}>
+          onClick={() =>
+            item.subsections && handleMainItemClick(item.name, item.url)
+          }>
           {renderIcon(item.icon)}
           {item.name}
           {item.subsections && item.subsections.length > 0 && (
@@ -90,7 +103,11 @@ const Navbar: React.FC = () => {
     return subItems.map((subItem, subIndex) => (
       <div
         key={subIndex}
-        className="flex items-start px-[1rem] py-3 cursor-pointer  flex-col justify-between">
+        className={`flex items-start px-[1rem] py-3 cursor-pointer  flex-col justify-between ${
+          pathname === subItem.url
+            ? "text-white border border-borderC rounded-lg bg-dark"
+            : ""
+        }`}>
         <Link className="flex items-center gap-3" href={subItem.url}>
           {renderIcon(subItem.icon)}
           {subItem.name}
@@ -108,8 +125,9 @@ const Navbar: React.FC = () => {
         {renderNavbarItems(navbarData.navbar.main)}
       </div>
       <div className="pl-[3rem] p-3 capitalize link">
-        <MdOutlineSettings className="text-primary"/>
-        settings</div>
+        <MdOutlineSettings className="text-primary" />
+        settings
+      </div>
     </section>
   );
 };
