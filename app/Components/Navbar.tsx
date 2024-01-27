@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import navbarData from "../../data/navbarData.json";
 import {
@@ -61,38 +61,32 @@ const renderIcon = (iconName: string) => {
 
 const Navbar: React.FC = () => {
   const pathname = usePathname();
-  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const pathSegments = pathname.split("/").filter(Boolean);
+  // Assuming pathname is "/newspaper/advertise"
+  const main = pathSegments[0]; // "newspaper"
+  const sub = pathSegments[1]; // "advertise"
 
-  const handleMainItemClick = (name: string, url?: string) => {
-    setActiveSubmenu(activeSubmenu === name ? null : name);
+  const [active, setActive] = useState<string | null>(null);
 
-    // Set activeSubmenu based on the URL
-    if (url && pathname.startsWith(url)) {
-      setActiveSubmenu(name);
-    }
+  const handleClick = (name: string) => {
+    setActive(name);
   };
 
   const renderNavbarItems = (items: MainNavbarItem[]) => {
     return items.map((item, index) => (
       <div
         key={index}
-        className={`flex items-start px-[1rem] py-3 cursor-pointer  flex-col justify-between ${
-          pathname && item.url && pathname.startsWith(item.url)
-            ? "text-red-400"
-            : ""
-        }`}>
+        className="flex items-start px-[1rem] py-3 cursor-pointer  flex-col justify-between">
         <div
           className="link"
-          onClick={() =>
-            item.subsections && handleMainItemClick(item.name, item.url)
-          }>
+          onClick={() => handleClick(item.name.toLocaleLowerCase())}>
           {renderIcon(item.icon)}
           {item.name}
           {item.subsections && item.subsections.length > 0 && (
             <MdKeyboardArrowDown />
           )}
         </div>
-        {item.subsections && activeSubmenu === item.name && (
+        {item.subsections && main === item.name.toLocaleLowerCase() && (
           <div className="ml-4">{renderSubNavbarItems(item.subsections)}</div>
         )}
       </div>
@@ -104,7 +98,7 @@ const Navbar: React.FC = () => {
       <div
         key={subIndex}
         className={`flex items-start px-[1rem] py-3 cursor-pointer  flex-col justify-between ${
-          pathname === subItem.url
+          sub === subItem.name.toLowerCase()
             ? "text-white border border-borderC rounded-lg bg-dark"
             : ""
         }`}>
@@ -128,6 +122,7 @@ const Navbar: React.FC = () => {
         <MdOutlineSettings className="text-primary" />
         settings
       </div>
+      {active}
     </section>
   );
 };
