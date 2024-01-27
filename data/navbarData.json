@@ -3,16 +3,18 @@
     "main": [
       {
         "name": "Signboard",
+        "codeName": "signboard",
         "icon": "MdCreate",
-        
         "subsections": [
           {
             "name": "Design",
+            "codeName": "design",
             "url": "/signboard/design",
             "icon": "MdPalette"
           },
           {
             "name": "Installation",
+            "codeName": "installation",
             "url": "/signboard/installation",
             "icon": "MdBuild"
           }
@@ -20,15 +22,18 @@
       },
       {
         "name": "Newspaper",
+        "codeName": "newspaper",
         "icon": "MdLibraryBooks",
         "subsections": [
           {
             "name": "Advertise",
+            "codeName": "advertise",
             "url": "/newspaper/advertise",
             "icon": "MdDiversity2"
           },
           {
             "name": "Editorials",
+            "codeName": "editorials",
             "url": "/newspaper/editorials",
             "icon": "MdEdit"
           }
@@ -36,15 +41,18 @@
       },
       {
         "name": "Flyers",
+        "codeName": "flyers",
         "icon": "MdDescription",
         "subsections": [
           {
             "name": "Design",
+            "codeName": "design",
             "url": "/flyers/design",
             "icon": "MdDirectionsWalk"
           },
           {
             "name": "Distribution",
+            "codeName": "distribution",
             "url": "/flyers/distribution",
             "icon": "MdDevicesOther"
           }
@@ -52,37 +60,64 @@
       },
       {
         "name": "Proposal",
+        "codeName": "proposal",
         "icon": "MdLocalActivity",
-        "url": "/proposal"
+
+        "subsections": [
+          {
+            "name": "Introduction",
+            "codeName": "introduction",
+            "url": "/proposal/introduction",
+            "icon": "MdInfo"
+          },
+          {
+            "name": "Objectives",
+            "codeName": "objectives",
+            "url": "/proposal/objectives",
+            "icon": "MdCheckCircle"
+          },
+          {
+            "name": "Budget",
+            "codeName": "budget",
+            "url": "/proposal/budget",
+            "icon": "MdMonetizationOn"
+          }
+        ]
       },
       {
         "name": "Social Media",
+        "codeName": "socialmedia",
         "icon": "MdGroups",
         "subsections": [
           {
             "name": "Marketing",
-            "url": "/social-media/marketing",
+            "codeName": "marketing",
+            "url": "/socialmedia/marketing",
             "icon": "MdCalendarViewMonth"
           },
           {
             "name": "Content",
-            "url": "/social-media/content",
+            "codeName": "content",
+            "url": "/socialmedia/content",
             "icon": "MdDescription"
           }
         ]
       },
       {
         "name": "Business Cards",
+        "codeName": "businesscards",
         "icon": "MdBusinessCenter",
         "subsections": [
           {
             "name": "Design",
-            "url": "/business-cards/design",
+            "codeName": "design",
+            "url": "/businesscards/design",
             "icon": "MdBrokenImage"
           },
           {
             "name": "Printing",
-            "url": "/business-cards/printing",
+            "codeName": "printing",
+            "url": "/businesscards/printing",
             "icon": "MdPrint"
           }
         ]

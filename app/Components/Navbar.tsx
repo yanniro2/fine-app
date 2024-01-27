@@ -20,6 +20,9 @@ import {
   MdPrint,
   MdKeyboardArrowDown,
   MdOutlineSettings,
+  MdInfo,
+  MdCheckCircle,
+  MdMonetizationOn,
 } from "react-icons/md";
 import Link from "next/link";
 
@@ -27,11 +30,13 @@ type SubNavbarItem = {
   name: string;
   icon: string;
   url: string;
+  codeName: string;
 };
 
 type MainNavbarItem = {
   name: string;
   icon: string;
+  codeName: string;
   url?: string;
   subsections?: SubNavbarItem[];
 };
@@ -53,6 +58,9 @@ const renderIcon = (iconName: string) => {
     MdCalendarViewMonth,
     MdBrokenImage,
     MdPrint,
+    MdInfo,
+    MdCheckCircle,
+    MdMonetizationOn,
   };
 
   const IconComponent = iconComponents[iconName];
@@ -79,14 +87,17 @@ const Navbar: React.FC = () => {
         className="flex items-start px-[1rem] py-3 cursor-pointer  flex-col justify-between">
         <div
           className="link"
-          onClick={() => handleClick(item.name.toLocaleLowerCase())}>
+          onClick={() => handleClick(item.codeName.toLocaleLowerCase())}>
           {renderIcon(item.icon)}
           {item.name}
           {item.subsections && item.subsections.length > 0 && (
             <MdKeyboardArrowDown />
           )}
         </div>
-        {item.subsections && main === item.name.toLocaleLowerCase() && (
+        {item.subsections && main === item.codeName.toLocaleLowerCase() && (
+          <div className="ml-4">{renderSubNavbarItems(item.subsections)}</div>
+        )}
+        {item.subsections && active === item.codeName.toLocaleLowerCase() && (
           <div className="ml-4">{renderSubNavbarItems(item.subsections)}</div>
         )}
       </div>
