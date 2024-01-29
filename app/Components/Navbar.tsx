@@ -121,7 +121,6 @@ const Navbar: React.FC = () => {
         }`}>
         <Link className="flex items-center gap-3" href={subItem.url}>
           <div className="navlinkIcon">{renderIcon(subItem.icon)}</div>
-
           {subItem.name}
         </Link>
       </div>
@@ -139,23 +138,21 @@ const Navbar: React.FC = () => {
             width={100}
             height={100}
           /> */}
-
           <div className="flex items-center justify-center flex-col text-white text-center w-full drop-shadow-lg shadow-lg">
             <h1 className="text-6xl font-light tracking-[8px] font">fine</h1>
             <span className="text-sm -ml-[6px]">luxury property</span>
           </div>
         </Link>
       </div>
-
       <div className="pl-[2rem]">
         {renderNavbarItems(navbarData.navbar.main)}
       </div>
       <Link
-        className={`pl-[3rem] p-3 capitalize link ${
-          pathname === "/setting" ? "navLink-active" : ""
+        className={`p-3 capitalize text-center flex items-center w-full justify-center gap-3 border-borderC border-t hover:bg-primary transition-all text-white  ${
+          pathname === "/setting" ? "bg-primary text-white group" : ""
         }`}
         href="/setting">
-        <MdOutlineSettings className="text-primary" />
+        <MdOutlineSettings className=" border-borderC border p-1 text-[1.6rem] rounded-lg" />
         settings
       </Link>
     </section>
