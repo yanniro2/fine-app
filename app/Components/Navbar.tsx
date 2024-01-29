@@ -26,6 +26,7 @@ import {
 } from "react-icons/md";
 import Link from "next/link";
 import Image from "next/image";
+import Logo from "./Logo";
 
 type SubNavbarItem = {
   name: string;
@@ -129,21 +130,8 @@ const Navbar: React.FC = () => {
 
   return (
     <section className="w-fit bg-darkMin h-screen fixed top-0 left-0 bottom-0 z-[2000] drop-shadow-lg shadow-lg border-r-4 border-borderC flex justify-between flex-col text-textC ">
-      <div className="uppercase flex flex-col items-center leading-none justify-center text-center p-5 pt-[2rem]">
-        <Link href="/" className="flex items-center justify-center">
-          {/* <Image
-            src="/assets/img/fine - logo.svg"
-            alt="logo img"
-            className="w-2/3 drop-shadow shadow"
-            width={100}
-            height={100}
-          /> */}
-          <div className="flex items-center justify-center flex-col text-white text-center w-full drop-shadow-lg shadow-lg">
-            <h1 className="text-6xl font-light tracking-[8px] font">fine</h1>
-            <span className="text-sm -ml-[6px]">luxury property</span>
-          </div>
-        </Link>
-      </div>
+      <Logo />
+
       <div className="pl-[2rem]">
         {renderNavbarItems(navbarData.navbar.main)}
       </div>
