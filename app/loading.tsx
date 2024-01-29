@@ -2,7 +2,7 @@ import Logo from "./Components/Logo";
 
 export default function Loading() {
   return (
-    <section className="w-screen h-screen flex items-center justify-center  ">
+    <section className="w-screen h-screen pl-[20vw] flex items-center justify-center  ">
       <div className="flex flex-col items-center gap-[1rem]">
         {/* <h1 className=" text-primary text-4xl  font-roboto-mono font-bold uppercase underline ">
           Pixel Media

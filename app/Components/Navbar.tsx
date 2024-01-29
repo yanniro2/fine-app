@@ -120,7 +120,9 @@ const Navbar: React.FC = () => {
         className={`navLink group ${
           sub === subItem.name.toLowerCase() ? "navlink-active-Primary" : ""
         }`}>
-        <Link className="flex items-center gap-3" href={subItem.url}>
+        <Link
+          className="flex items-center justify-end gap-3"
+          href={subItem.url}>
           <div className="navlinkIcon">{renderIcon(subItem.icon)}</div>
           {subItem.name}
         </Link>

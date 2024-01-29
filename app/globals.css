@@ -41,7 +41,7 @@
 }
 
 .navLink {
-  @apply link  border border-darkMin hover:border hover:border-borderC p-1 rounded-2xl hover:bg-dark px-[2rem] transition-all;
+  @apply flex items-center gap-3 border border-darkMin hover:border hover:border-borderC p-1 rounded-2xl hover:bg-dark px-[2rem] transition-all ;
 }
 
 .navLink-active {
