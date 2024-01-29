@@ -21,11 +21,11 @@
 }
 
 .link {
-  @apply flex items-center gap-3 group-active:text-white;
+  @apply flex items-center gap-3 group-active:text-white hover:text-white transition-all;
 }
 
 .link-2 {
-  @apply cursor-pointer hover:text-white hover:font-medium transition-all;
+  @apply cursor-pointer hover:text-white  transition-all;
 }
 
 .link2-active {
@@ -40,3 +40,18 @@
   @apply border border-borderC w-max capitalize bg-[#1E1E1E]  py-3 px-[3rem] rounded-xl text-white transition-all;
 }
 
+.navLink {
+  @apply link  border border-darkMin hover:border hover:border-borderC p-1 rounded-2xl hover:bg-dark px-[2rem] transition-all;
+}
+
+.navLink-active {
+  @apply  border-borderC bg-dark transition-all;
+}
+
+.navlinkIcon {
+  @apply bg-dark p-2 border border-borderC  rounded-xl;
+}
+
+.navlink-active-Primary {
+  @apply border-borderC bg-primary text-white transition-all;
+}

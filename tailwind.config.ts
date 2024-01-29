@@ -20,6 +20,7 @@ const config: Config = {
         textC: "#707070",
         darkMin: "#1E1E1E",
         borderC: "#363636",
+        white: "#ffffff",
       },
     },
   },
