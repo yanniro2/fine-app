@@ -4,7 +4,7 @@
       {
         "name": "Signboard",
         "codeName": "signboard",
-        "icon": "MdCreate",
+        "icon": "CgPolaroid",
         "subsections": [
           {
             "name": "Design",
@@ -23,7 +23,7 @@
       {
         "name": "Newspaper",
         "codeName": "newspaper",
-        "icon": "MdLibraryBooks",
+        "icon": "FaNewspaper",
         "subsections": [
           {
             "name": "Advertise",
@@ -42,7 +42,7 @@
       {
         "name": "Flyers",
         "codeName": "flyers",
-        "icon": "MdDescription",
+        "icon": "HiOutlineDocumentText",
         "subsections": [
           {
             "name": "Design",
@@ -61,7 +61,7 @@
       {
         "name": "Proposal",
         "codeName": "proposal",
-        "icon": "MdLocalActivity",
+        "icon": "CgFileDocument",
 
         "subsections": [
           {
@@ -75,19 +75,13 @@
             "codeName": "objectives",
             "url": "/proposal/objectives",
             "icon": "MdCheckCircle"
-          },
-          {
-            "name": "Budget",
-            "codeName": "budget",
-            "url": "/proposal/budget",
-            "icon": "MdMonetizationOn"
           }
         ]
       },
       {
         "name": "Social Media",
         "codeName": "socialmedia",
-        "icon": "MdGroups",
+        "icon": "FaMeta",
         "subsections": [
           {
             "name": "Marketing",
@@ -106,7 +100,7 @@
       {
         "name": "Business Cards",
         "codeName": "businesscards",
-        "icon": "MdBusinessCenter",
+        "icon": "FaAddressCard",
         "subsections": [
           {
             "name": "Design",

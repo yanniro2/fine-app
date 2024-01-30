@@ -2,6 +2,9 @@
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import navbarData from "../../data/navbarData.json";
+import { CgPolaroid, CgFileDocument } from "react-icons/cg";
+import { FaNewspaper, FaAddressCard, FaMeta } from "react-icons/fa6";
+import { HiOutlineDocumentText } from "react-icons/hi";
 import {
   MdCreate,
   MdLibraryBooks,
@@ -63,10 +66,16 @@ const renderIcon = (iconName: string) => {
     MdInfo,
     MdCheckCircle,
     MdMonetizationOn,
+    CgPolaroid,
+    FaNewspaper,
+    FaAddressCard,
+    CgFileDocument,
+    HiOutlineDocumentText,
+    FaMeta,
   };
 
   const IconComponent = iconComponents[iconName];
-  return <IconComponent className="text-primary" />;
+  return <IconComponent className="text-white " />;
 };
 
 const Navbar: React.FC = () => {
@@ -86,15 +95,20 @@ const Navbar: React.FC = () => {
     return items.map((item, index) => (
       <div
         key={index}
-        className="flex items-start px-[.5rem] py-3 cursor-pointer  flex-col justify-center">
+        className="flex items-start px-[2rem] py-3 cursor-pointer  flex-col justify-between w-full">
         <div
-          className={`navLink group ${
-            main === item.codeName ? "navLink-active" : ""
+          className={`flex items-center justify-between gap-3 hover:border hover:border-borderC p-1 rounded-2xl hover:bg-dark w-full transition-all hover:text-white border   group ${
+            main === item.codeName
+              ? "border-borderC bg-dark transition-all text-white border "
+              : "border-darkMin"
           }`}
           onClick={() => handleClick(item.codeName.toLocaleLowerCase())}>
-          <div className="navlinkIcon">{renderIcon(item.icon)}</div>
+          <div className="flex items-center justify-center gap-3">
+            <div className="p-2   rounded-xl">{renderIcon(item.icon)}</div>
 
-          {item.name}
+            {item.name}
+          </div>
+
           {item.subsections && item.subsections.length > 0 && (
             <MdKeyboardArrowDown />
           )}
@@ -117,13 +131,15 @@ const Navbar: React.FC = () => {
     return subItems.map((subItem, subIndex) => (
       <div
         key={subIndex}
-        className={`navLink group ${
-          sub === subItem.name.toLowerCase() ? "navlink-active-Primary" : ""
+        className={`flex items-center justify-between gap-3 hover:border hover:border-borderC p-1 rounded-2xl hover:bg-dark w-full transition-all hover:text-white border   group pr-[1rem] ${
+          sub === subItem.name.toLowerCase()
+            ? "border-borderC bg-dark transition-all text-white border "
+            : "border-darkMin"
         }`}>
         <Link
-          className="flex items-center justify-end gap-3"
+          className="flex items-center justify-start gap-3 w-full"
           href={subItem.url}>
-          <div className="navlinkIcon">{renderIcon(subItem.icon)}</div>
+          <div className="p-2   rounded-xl">{renderIcon(subItem.icon)}</div>
           {subItem.name}
         </Link>
       </div>
@@ -134,15 +150,13 @@ const Navbar: React.FC = () => {
     <section className="w-fit bg-darkMin h-screen fixed top-0 left-0 bottom-0 z-[2000] drop-shadow-lg shadow-lg border-r-4 border-borderC flex justify-between flex-col text-textC ">
       <Logo />
 
-      <div className="pl-[2rem]">
-        {renderNavbarItems(navbarData.navbar.main)}
-      </div>
+      <div>{renderNavbarItems(navbarData.navbar.main)}</div>
       <Link
-        className={`p-3 capitalize text-center flex items-center w-full justify-center gap-3 border-borderC border-t hover:bg-primary transition-all text-white  ${
-          pathname === "/setting" ? "bg-primary text-white group" : ""
+        className={`p-3 capitalize text-center flex items-center w-full justify-center gap-3 border-borderC border-t hover:bg-dark hover:text-white text-textC transition-all   ${
+          pathname === "/setting" ? " text-white group bg-dark" : ""
         }`}
         href="/setting">
-        <MdOutlineSettings className=" border-borderC border p-1 text-[1.6rem] rounded-lg" />
+        <MdOutlineSettings className="p-1 text-[1.6rem] rounded-lg" />
         settings
       </Link>
     </section>
