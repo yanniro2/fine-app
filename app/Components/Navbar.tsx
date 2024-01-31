@@ -95,7 +95,7 @@ const Navbar: React.FC = () => {
     return items.map((item, index) => (
       <div
         key={index}
-        className="flex items-start px-[2rem] py-3 cursor-pointer  flex-col justify-between w-full">
+        className="flex items-center px-[2rem] py-3 cursor-pointer  flex-col justify-between w-[20vw]">
         <div
           className={`flex items-center justify-between gap-3 hover:border hover:border-borderC p-1 rounded-2xl hover:bg-dark w-full transition-all hover:text-white border   group ${
             main === item.codeName
@@ -147,10 +147,12 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <section className="w-fit bg-darkMin h-screen fixed top-0 left-0 bottom-0 z-[2000] drop-shadow-lg shadow-lg border-r-4 border-borderC flex justify-between flex-col text-textC ">
+    <section className="w-[20vw] bg-darkMin h-screen fixed top-0 left-0 bottom-0 z-[2000] drop-shadow-lg shadow-lg border-r-4 border-borderC flex justify-between flex-col text-textC ">
       <Logo />
 
-      <div>{renderNavbarItems(navbarData.navbar.main)}</div>
+      <div className="w-full h-[60vh] flex flex-col justify-between transition-all">
+        {renderNavbarItems(navbarData.navbar.main)}
+      </div>
       <Link
         className={`p-3 capitalize text-center flex items-center w-full justify-center gap-3 border-borderC border-t hover:bg-dark hover:text-white text-textC transition-all   ${
           pathname === "/setting" ? " text-white group bg-dark" : ""
