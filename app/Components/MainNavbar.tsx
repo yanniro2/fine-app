@@ -24,8 +24,8 @@ const MainNavbar = (props: Props) => {
         href="/home"
         className={`p-2 border-borderC border rounded-lg text-xl transition-all${
           pathname === "/home"
-            ? "bg-white text-primary transition-all"
-            : " text-textC hover:bg-white hover:text-primary transition-all"
+            ? "bg-white text-white transition-all"
+            : " text-textC hover:bg-white  transition-all"
         }`}>
         {/* <Image
           src="/assets/svg/homeicon.svg"
