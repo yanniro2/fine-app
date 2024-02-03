@@ -1,5 +1,5 @@
-"use client";
-import React, { ChangeEvent, useState } from "react";
+import { MdOutlineFileDownload } from "react-icons/md";
+import React, { ChangeEvent } from "react";
 
 interface ImageInputProps {
   onImageChange: (file: File) => void;
@@ -14,7 +14,26 @@ const ImageInput: React.FC<ImageInputProps> = ({ onImageChange }) => {
     }
   };
 
-  return <input type="file" accept="image/*" onChange={handleImageChange} />;
+  return (
+    <div className="p-3 border border-dashed rounded-lg text-white hover:bg-white hover:text-dark cursor-pointer ">
+      {/* Use the imported image for styling and make it clickable */}
+      <label
+        htmlFor="imageInput"
+        className="cursor-pointer flex items-center justify-center flex-col capitalize font-semibold">
+        <MdOutlineFileDownload className="text-4xl" />
+        Drop Image or Click to Selected image
+      </label>
+
+      {/* Input for selecting a new image */}
+      <input
+        id="imageInput"
+        type="file"
+        accept="image/*"
+        className="hidden"
+        onChange={handleImageChange}
+      />
+    </div>
+  );
 };
 
 export default ImageInput;

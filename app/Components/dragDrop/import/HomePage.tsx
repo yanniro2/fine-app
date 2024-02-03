@@ -1,6 +1,8 @@
+"use client";
 import React, { useState } from "react";
 import ImageComponent from "./ImageComponent";
 import ImageInput from "./ImageInput";
+import FabricCanvas from "../FabricCanvas";
 
 const HomePage: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
@@ -10,14 +12,10 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1>Next.js Image Input Example</h1>
-      <ImageInput onImageChange={handleImageChange} />
+    <div className="w-screen h-screen flex items-center justify-center">
+      {!selectedImage && <ImageInput onImageChange={handleImageChange} />}
       {selectedImage && (
-        <ImageComponent
-          src={URL.createObjectURL(selectedImage)}
-          alt="Selected Image"
-        />
+        <FabricCanvas imageUrl={URL.createObjectURL(selectedImage)} />
       )}
     </div>
   );
