@@ -15,7 +15,7 @@ const MainNavbar = (props: Props) => {
   }, [pathname]);
 
   return (
-    <div className="fixed top-[2rem] w-[25rem] left-1/2 py-2 bg-[#1E1E1E] rounded-[1.1rem] flex items-center gap-[3rem] border-borderC border text-[#707070] justify-evenly">
+    <div className="fixed top-[2rem] w-[25rem] left-1/2 py-2 bg-[#1E1E1E] rounded-[1.1rem] flex items-center gap-[3rem] border-borderC border text-[#707070] justify-evenly z-[2000]">
       <Link
         href={"/template"}
         className={

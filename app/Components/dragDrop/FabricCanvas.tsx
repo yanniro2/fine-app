@@ -10,34 +10,59 @@ interface FabricCanvasProps {
 const FabricCanvas: React.FC<FabricCanvasProps> = ({ imageUrl }) => {
   useEffect(() => {
     // Create fabric canvas
-    const canvas = new fabric.Canvas("c");
-
-    // Load image from URL
-    fabric.Image.fromURL(imageUrl, (oImg) => {
-      // Modify the image before adding it to the canvas
-      // oImg.set({
-      //   left: 1 / 2,
-
-      //   top: 1 / 2,
-      //   // angle: 30,
-      //   opacity: 0.85,
-      //   width: 500,
-      //   height: 500,
-      // });
-
-      // Add the image to the canvas
-      canvas.add(oImg);
+    const canvas = new fabric.Canvas("c", {
+      width: window.innerWidth,
+      height: window.innerHeight,
     });
 
-    // Cleanup on unmount
-    return () => {
-      canvas.dispose();
-    };
+    // Load image from URL
+    fabric.Image.fromURL(imageUrl, (oImg: fabric.Image | undefined) => {
+      if (oImg) {
+        // Set scale to 50%
+        oImg.scaleToWidth(canvas.width !== undefined ? canvas.width * 0.5 : 0);
+
+        // Center the image both horizontally and vertically
+        oImg.set({
+          originX: "center",
+          originY: "center",
+          left: canvas.width !== undefined ? canvas.width / 2 : 0,
+          top: canvas.height !== undefined ? canvas.height / 2 : 0,
+        });
+
+        // Add the image to the canvas
+        canvas.add(oImg);
+
+        // Update canvas dimensions on window resize
+        const handleResize = () => {
+          canvas.setDimensions({
+            width: window.innerWidth,
+            height: window.innerHeight,
+          });
+
+          // Center the image on resize
+          oImg.set({
+            left: canvas.width !== undefined ? canvas.width / 2 : 0,
+            top: canvas.height !== undefined ? canvas.height / 2 : 0,
+          });
+
+          canvas.renderAll(); // Force canvas rerender after resizing
+        };
+
+        // Attach resize event listener
+        window.addEventListener("resize", handleResize);
+
+        // Cleanup on unmount
+        return () => {
+          window.removeEventListener("resize", handleResize);
+          canvas.dispose();
+        };
+      }
+    });
   }, [imageUrl]);
 
   return (
-    <div className="w-full h-full flex items-center justify-center">
-      <canvas id="c" width={1000} height={800} />
+    <div className="w-full h-full flex items-center justify-center relative">
+      <canvas id="c" className="fabric-canvas" />
     </div>
   );
 };
