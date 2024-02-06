@@ -57,15 +57,20 @@ const Page: React.FC = () => {
 
   const renderImages = () => {
     return filteredData.map((item: Campaign, index) => (
-      <div key={index} className="w-full h-full p-3 cursor-pointer">
+      <div
+        key={index}
+        className="w-full h-full cursor-pointer relative rounded-2xl overflow-hidden hover:scale-105 transition-all drop-shadow-md  border-2 hover:border-white border-transparent  group">
         <Image
           //   src={item.image_url}
           src="/assets/img/land.jpeg"
           alt={`Image ${index + 1}`}
           width={500}
           height={500}
+          className="group-hover:brightness-50 transition-all brightness-90"
         />
-        <p>{item.address}</p>
+        <p className="absolute bottom-5 left-1/2 right-1/2  -translate-x-1/2 w-full text-center uppercase backdrop-blur backdrop-brightness-50 ">
+          {item.address}
+        </p>
       </div>
     ));
   };
@@ -111,7 +116,9 @@ const Page: React.FC = () => {
             className="bg-transparent"
           />
         </div>
-        <div className="grid grid-rows-3 grid-cols-3">{renderImages()}</div>
+        <div className="grid grid-rows-3 grid-cols-3 gap-5 p-3">
+          {renderImages()}
+        </div>
       </div>
     </section>
   );
