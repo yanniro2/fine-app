@@ -37,6 +37,18 @@ const CampainContent: React.FC<Props> = () => {
                 onChange={(e) => handleChange(field.id, e.target.value)}
                 className="border-element"
               />
+            ) : field.type === "dropdown" ? (
+              <select
+                id={field.id}
+                value={field.value}
+                onChange={(e) => handleChange(field.id, e.target.value)}
+                className="border-element">
+                {field.options?.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
             ) : (
               <input
                 type={field.type}
@@ -49,6 +61,7 @@ const CampainContent: React.FC<Props> = () => {
             )}
           </div>
         ))}
+
         <button type="submit">Submit</button>
       </form>
     </div>
