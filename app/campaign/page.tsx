@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import data from "../../data/campaign.json";
 import Image from "next/image";
+import { IoMdAdd } from "react-icons/io";
 
 type Campaign = {
   name: string;
@@ -13,7 +14,7 @@ type Campaign = {
 };
 
 const Page: React.FC = () => {
-  const [filter, setFilter] = useState<string | null>(null);
+  const [filter, setFilter] = useState<string | null>("name");
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [sortOrder, setSortOrder] = useState<string>("asc");
 
@@ -59,7 +60,7 @@ const Page: React.FC = () => {
     return filteredData.map((item: Campaign, index) => (
       <div
         key={index}
-        className="w-full h-full cursor-pointer relative rounded-2xl overflow-hidden hover:scale-105 transition-all drop-shadow-md  border-2 hover:border-white border-transparent  group">
+        className="w-full h-full cursor-pointer relative rounded-2xl overflow-hidden hover:scale-105 transition-all drop-shadow-md  border-2 hover:border-white border-transparent group">
         <Image
           //   src={item.image_url}
           src="/assets/img/land.jpeg"
@@ -78,14 +79,17 @@ const Page: React.FC = () => {
   return (
     <section className="pl-[20vw] pt-[8rem] text-white">
       <div className="p-3 flex items-center justify-center flex-col">
-        <div className="w-full flex justify-between items-center">
+        <div className="w-full flex justify-between items-center p-3">
+          <button className="border-element capitalize flex items-center justify-center gap-5 button-glow border-white">
+            create new campaign <IoMdAdd />
+          </button>
           {/* Filter dropdown */}
-          <label className="bg-transparent">
+          <label className="border-element ">
             Filter by:{" "}
             <select
               value={filter || ""}
               onChange={(e) => setFilter(e.target.value || null)}
-              className="bg-transparent">
+              className="bg-transparent ">
               <option value="">-- Select Filter --</option>
               <option value="name">Name</option>
               <option value="date">Date</option>
@@ -94,7 +98,7 @@ const Page: React.FC = () => {
           </label>
 
           {/* Sort dropdown */}
-          <label>
+          <label className="border-element">
             Sort by:{" "}
             <select
               value={sortOrder}
@@ -113,7 +117,7 @@ const Page: React.FC = () => {
             }`}
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="bg-transparent"
+            className="border-element"
           />
         </div>
         <div className="grid grid-rows-3 grid-cols-3 gap-5 p-3">

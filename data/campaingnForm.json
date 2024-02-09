@@ -1,0 +1,81 @@
+{
+  "fields": [
+    {
+      "id": "address",
+      "label": "Address",
+      "type": "text",
+      "placeholder": "Enter the address",
+      "value": ""
+    },
+    {
+      "id": "bedrooms",
+      "label": "Bedrooms",
+      "type": "number",
+      "placeholder": "Enter the number of bedrooms",
+      "value": ""
+    },
+    {
+      "id": "bathrooms",
+      "label": "Bathrooms",
+      "type": "number",
+      "placeholder": "Enter the number of bathrooms",
+      "value": ""
+    },
+    {
+      "id": "garage",
+      "label": "Garage",
+      "type": "text",
+      "placeholder": "Enter the garage details",
+      "value": ""
+    },
+    {
+      "id": "landSize",
+      "label": "Land Size",
+      "type": "text",
+      "placeholder": "Enter the land size",
+      "value": ""
+    },
+    {
+      "id": "houseSize",
+      "label": "House Size",
+      "type": "text",
+      "placeholder": "Enter the house size",
+      "value": ""
+    },
+    {
+      "id": "propertyStatus",
+      "label": "Property Status",
+      "type": "dropdown",
+      "options": ["For Sale", "For Rent", "Under Construction"],
+      "value": ""
+    },
+    {
+      "id": "agent",
+      "label": "Agent",
+      "type": "dropdown",
+      "options": ["Agent 1", "Agent 2", "Agent 3"],
+      "value": ""
+    },
+    {
+      "id": "images",
+      "label": "Images",
+      "type": "text",
+      "placeholder": "Enter image URLs",
+      "value": ""
+    },
+    {
+      "id": "heading",
+      "label": "Heading",
+      "type": "text",
+      "placeholder": "Enter the heading",
+      "value": ""
+    },
+    {
+      "id": "description",
+      "label": "Description",
+      "type": "textarea",
+      "placeholder": "Enter the description",
+      "value": ""
+    }
+  ]
+}

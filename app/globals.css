@@ -12,6 +12,13 @@
   
 }
 
+@font-face {
+  font-family: 'Myanmar Khyay';
+  src: local('Myanmar Khyay Regular'), local('MyanmarKhyay-Regular'), url('/assets/fonts/Khyay-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 
 @layer utilities {
@@ -43,4 +50,22 @@
 .fabric-canvas {
   width: 100%;
   height: 100%;
+}
+
+.border-element {
+  @apply bg-transparent border-borderC border px-4 py-2 rounded-xl capitalize;
+}
+
+.button-glow {
+  @apply  border-white border px-4 py-2 rounded-xl bg-dark;
+  filter: drop-shadow(1px 2px 7px rgba(203, 203, 203, 0.6));
+}
+
+.label {
+  font-family: 'Myanmar Khyay', sans-serif;
+  @apply text-white font-normal;
+}
+
+.font-Myanmar {
+   font-family: 'Myanmar Khyay', sans-serif;
 }
