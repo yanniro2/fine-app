@@ -1,13 +1,48 @@
-/* Import statements and other code */
-"use client"
-import { useState, useEffect } from "react";
-import formData from "../../../data/campaingnForm.json"
+"use client";
+import React, { useState } from "react";
+import formData from "../../../data/campaingnForm.json"; // Adjust the path
 
+type DropdownField = {
+  id: string;
+  label: string;
+  type: "dropdown";
+  options: string[];
+  value: string;
+};
 
-type Props = {};
+type TextareaField = {
+  id: string;
+  label: string;
+  type: "textarea";
+  placeholder: string;
+  value: string;
+};
 
-const CampainContent: React.FC<Props> = () => {
-  const [formFields, setFormFields] = useState(formData.fields);
+type TextInputField = {
+  id: string;
+  label: string;
+  type: "text" | "number"; // Adjust as needed
+  placeholder: string;
+  value: string;
+};
+
+type FormField = DropdownField | TextareaField | TextInputField | any;
+
+type FormGroup = {
+  label: string;
+  fields: FormField[];
+};
+
+type FormData = {
+  groups: FormGroup[];
+};
+
+const initialFormFields: FormField[] = formData.groups.flatMap(
+  (group) => group.fields
+);
+
+const CampainContent: React.FC = () => {
+  const [formFields, setFormFields] = useState<FormField[]>(initialFormFields);
 
   const handleChange = (id: string, value: string) => {
     setFormFields((prevFields) =>
@@ -26,42 +61,46 @@ const CampainContent: React.FC<Props> = () => {
       <form
         onSubmit={handleSubmit}
         className="w-full h-full flex flex-col justify-between">
-        {formFields.map((field) => (
-          <div key={field.id} className="flex flex-col">
-            <label htmlFor={field.id}>{field.label}</label>
-            {field.type === "textarea" ? (
-              <textarea
-                id={field.id}
-                placeholder={field.placeholder}
-                value={field.value}
-                onChange={(e) => handleChange(field.id, e.target.value)}
-                className="border-element"
-              />
-            ) : field.type === "dropdown" ? (
-              <select
-                id={field.id}
-                value={field.value}
-                onChange={(e) => handleChange(field.id, e.target.value)}
-                className="border-element">
-                {field.options?.map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            ) : (
-              <input
-                type={field.type}
-                id={field.id}
-                placeholder={field.placeholder}
-                value={field.value}
-                onChange={(e) => handleChange(field.id, e.target.value)}
-                className="border-element"
-              />
-            )}
+        {formData.groups.map((group) => (
+          <div key={group.label} className="mb-4">
+            <h2 className="text-lg font-bold mb-2">{group.label}</h2>
+            {group.fields.map((field) => (
+              <div key={field.id} className="flex flex-col mb-2">
+                <label htmlFor={field.id}>{field.label}</label>
+                {field.type === "textarea" ? (
+                  <textarea
+                    id={field.id}
+                    placeholder={field.placeholder}
+                    value={field.value}
+                    onChange={(e) => handleChange(field.id, e.target.value)}
+                    className="border-element"
+                  />
+                ) : field.type === "dropdown" ? (
+                  <select
+                    id={field.id}
+                    value={field.value}
+                    onChange={(e) => handleChange(field.id, e.target.value)}
+                    className="border-element">
+                    {field.options?.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+                ) : (
+                  <input
+                    type={field.type}
+                    id={field.id}
+                    placeholder={field.placeholder}
+                    value={field.value}
+                    onChange={(e) => handleChange(field.id, e.target.value)}
+                    className="border-element"
+                  />
+                )}
+              </div>
+            ))}
           </div>
         ))}
-
         <button type="submit">Submit</button>
       </form>
     </div>
