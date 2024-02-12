@@ -95,7 +95,7 @@ const Navbar: React.FC = () => {
     return items.map((item, index) => (
       <div
         key={index}
-        className="flex items-center px-[2rem] py-3 cursor-pointer  flex-col justify-between w-[20vw]">
+        className="flex items-center px-[2rem] py-3 cursor-pointer  flex-col justify-between w-[20vw]  ">
         <div
           className={`flex items-center justify-between gap-3 hover:border hover:border-borderC p-1 rounded-2xl hover:bg-dark w-full transition-all hover:text-white border   group ${
             main === item.codeName
@@ -147,7 +147,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <section className="w-[20vw] bg-darkMin h-screen fixed top-0 left-0 bottom-0 z-[2000] drop-shadow-lg shadow-lg border-r-4 border-borderC flex justify-between flex-col text-textC ">
+    <section className="w-[20vw] bg-gradient-to-t from-[#232323] to-[#161616] h-screen fixed top-0 left-0 bottom-0 z-[2000] drop-shadow-lg shadow-lg border-r-4 border-borderC flex justify-between flex-col text-textC ">
       <Logo />
 
       <div className="w-full h-[60vh] flex flex-col justify-between transition-all">

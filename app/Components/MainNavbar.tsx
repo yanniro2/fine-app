@@ -15,7 +15,12 @@ const MainNavbar = (props: Props) => {
   }, [pathname]);
 
   return (
-    <div className="fixed top-[2rem] w-[25rem] left-1/2 py-2 bg-[#1E1E1E] rounded-[1.1rem] flex items-center gap-[3rem] border-borderC border text-[#707070] justify-evenly z-[2000]">
+    <div className="fixed top-[2rem] w-[25rem] left-1/2 py-2 bg-gradient-to-t from-[#161616] to-[#232323] rounded-[1.1rem] flex items-center gap-[3rem] border-borderC border text-[#707070] justify-evenly z-[2000]">
+      <Link
+        href={"/campaign"}
+        className={currentPathname === "/campaign" ? "link2-active" : "link"}>
+        Campaign
+      </Link>
       <Link
         href={"/template"}
         className={
@@ -26,17 +31,13 @@ const MainNavbar = (props: Props) => {
         }>
         Template
       </Link>
-      <Link
-        href={"/campaign"}
-        className={currentPathname === "/campaign" ? "link2-active" : "link"}>
-        Campaign
-      </Link>
+
       <Link
         href="/home"
         className={`p-2 border-borderC border rounded-lg text-xl transition-all${
           currentPathname === "/home"
             ? "bg-white text-white transition-all"
-            : " text-textC hover:bg-white  transition-all"
+            : " text-textC hover:text-white  transition-all"
         }`}>
         <MdHomeFilled />
       </Link>
