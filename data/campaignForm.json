@@ -1,0 +1,71 @@
+{
+  "campaignCategories": [
+    {
+      "name": "address",
+      "label": "Address",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "bedrooms",
+      "label": "Number of Bedrooms",
+      "type": "number",
+      "required": true
+    },
+    {
+      "name": "bathrooms",
+      "label": "Number of Bathrooms",
+      "type": "number",
+      "required": true
+    },
+    {
+      "name": "garage",
+      "label": "Number of Garage Spaces",
+      "type": "number",
+      "required": false
+    },
+    {
+      "name": "landSize",
+      "label": "Land Size (sqft)",
+      "type": "number",
+      "required": true
+    },
+    {
+      "name": "buildingSize",
+      "label": "Building Size (sqft)",
+      "type": "number",
+      "required": true
+    },
+    {
+      "name": "propertyStatus",
+      "label": "Property Status",
+      "type": "select",
+      "options": ["Archives", "Active", "New"],
+      "required": true
+    },
+    {
+      "name": "agent",
+      "label": "Agent",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "images",
+      "label": "Images",
+      "type": "file",
+      "required": true
+    },
+    {
+      "name": "heading",
+      "label": "Heading",
+      "type": "text",
+      "required": true
+    },
+    {
+      "name": "description",
+      "label": "Description",
+      "type": "textarea",
+      "required": true
+    }
+  ]
+}
