@@ -11,7 +11,7 @@ const Sidebar: React.FC = ({}: Props) => {
   const pathname = usePathname();
 
   return (
-    <section className="w-[20vw] bg-gradient-to-t from-[#232323] to-[#161616] h-screen  drop-shadow-lg shadow-lg border-r-4 border-borderC flex justify-between flex-col text-textC">
+    <section className="sidemenu">
       <Logo />
 
       {/* Contents */}

@@ -9,17 +9,18 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  
 }
 
 @font-face {
-  font-family: 'Myanmar Khyay';
-  src: local('Myanmar Khyay Regular'), local('MyanmarKhyay-Regular'), url('/assets/fonts/Khyay-Regular.ttf') format('truetype');
+  font-family: "Myanmar-Khyay";
+  src: url("/assets/fonts/Myanmar-Khyay.ttf.woff") format("woff"),
+    url("/assets/fonts/Myanmar-Khyay.ttf.svg#Myanmar-Khyay") format("svg"),
+    url("/assets/fonts/Myanmar-Khyay.ttf.eot"),
+    url("/assets/fonts/Myanmar-Khyay.ttf.eot?#iefix")
+      format("embedded-opentype");
   font-weight: normal;
   font-style: normal;
 }
-
-
 
 @layer utilities {
   .text-balance {
@@ -40,7 +41,7 @@
 }
 
 .btn-1 {
-  @apply border border-borderC w-max capitalize bg-[#1E1E1E] text-[#707070] py-3 px-[3rem] rounded-xl hover:text-white transition-all ;
+  @apply border border-borderC w-max capitalize bg-[#1E1E1E] text-[#707070] py-3 px-[3rem] rounded-xl hover:text-white transition-all;
 }
 
 .btn-1-active {
@@ -53,19 +54,44 @@
 }
 
 .border-element {
-  @apply bg-transparent border-borderC border p-1 rounded-xl capitalize outline-none;
+  font-family: "Myanmar Khyay", sans-serif;
+  font-weight: 400;
+  @apply bg-transparent border-borderC border  rounded-xl capitalize outline-none p-1 text-[.9rem] px-2;
 }
 
 .button-glow {
-  @apply  border-white border px-4 py-2 rounded-xl bg-dark;
+  @apply border-white border px-4 py-2 rounded-xl bg-dark;
   filter: drop-shadow(1px 2px 7px rgba(203, 203, 203, 0.6));
 }
 
 .label {
-  /* font-family: 'Myanmar Khyay', sans-serif; */
-  @apply text-white font-normal;
+  font-family: "Myanmar Khyay", sans-serif;
+  font-weight: 400;
+  @apply text-white pt-1 pl-1 text-[.9rem];
 }
 
 .font-Myanmar {
-   font-family: 'Myanmar Khyay', sans-serif;
+  font-family: "Myanmar Khyay", sans-serif;
+}
+
+.sidemenu {
+  @apply w-[20vw] bg-gradient-to-t from-[#161616] to-[#232323] h-screen  drop-shadow-lg shadow-lg  flex justify-between flex-col text-textC;
+}
+
+.submit {
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #232323 0%, rgba(51, 51, 51, 0) 100%);
+  border: 1px solid #515151;
+  box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  @apply py-1 px-4 capitalize flex items-center justify-center;
+}
+
+.cancel {
+  box-sizing: border-box;
+  /* background: linear-gradient(180deg, #232323 0%, rgba(51, 51, 51, 0) 100%); */
+  /* border: 1px solid #515151; */
+  /* box-shadow: 0px 0px 4px rgba(255, 255, 255, 0.2); */
+  border-radius: 10px;
+  @apply py-1 px-4 capitalize flex items-center justify-center hover:underline transition-all;
 }

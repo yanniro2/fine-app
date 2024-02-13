@@ -5,7 +5,7 @@ type Props = {};
 
 const Logo = (props: Props) => {
   return (
-    <div className="uppercase flex flex-col items-center leading-none justify-center text-center p-5 pt-[2rem]">
+    <div className="uppercase flex flex-col items-center leading-none justify-center text-center p-5 pt-[1rem]">
       <Link href="/home" className="flex items-center justify-center">
         <Image
           src="/assets/svg/logo.svg"

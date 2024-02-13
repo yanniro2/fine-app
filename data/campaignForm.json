@@ -4,7 +4,8 @@
       "name": "address",
       "label": "Address",
       "type": "text",
-      "required": true
+      "required": true,
+      "sample": "123 Main St, Cityville"
     },
     {
       "group": "propertyDetails",
@@ -13,19 +14,22 @@
           "name": "bedrooms",
           "label": "Bedrooms",
           "type": "number",
-          "required": true
+          "required": true,
+          "sample": 3
         },
         {
           "name": "bathrooms",
           "label": "Bathrooms",
           "type": "number",
-          "required": true
+          "required": true,
+          "sample": 2.5
         },
         {
           "name": "garage",
           "label": "Garage",
           "type": "number",
-          "required": false
+          "required": false,
+          "sample": 2
         }
       ]
     },
@@ -36,13 +40,15 @@
           "name": "landSize",
           "label": "Land Size",
           "type": "number",
-          "required": true
+          "required": true,
+          "sample": 5000
         },
         {
           "name": "buildingSize",
           "label": "Building Size",
           "type": "number",
-          "required": true
+          "required": true,
+          "sample": 2500
         }
       ]
     },
@@ -51,14 +57,16 @@
       "label": "Property Status",
       "type": "select",
       "options": ["Archives", "Active", "New"],
-      "required": true
+      "required": true,
+      "sample": "Active"
     },
     {
       "name": "agent",
       "label": "Agent",
       "type": "select",
       "options": ["rhys gebethner"],
-      "required": true
+      "required": true,
+      "sample": "rhys gebethner"
     },
     {
       "name": "images",
@@ -70,13 +78,15 @@
       "name": "heading",
       "label": "Heading",
       "type": "textarea",
-      "required": true
+      "required": true,
+      "sample": "Beautiful Home with a View"
     },
     {
       "name": "description",
       "label": "Description",
       "type": "textarea",
-      "required": true
+      "required": true,
+      "sample": "This property features stunning views, spacious rooms, and a lovely backyard."
     }
   ]
 }

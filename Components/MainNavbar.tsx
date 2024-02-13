@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { MdHomeFilled } from "react-icons/md";
 import Link from "next/link";
+import Image from "next/image";
 
 type Props = {};
 
@@ -15,7 +16,7 @@ const MainNavbar = (props: Props) => {
   }, [pathname]);
 
   return (
-    <div className="fixed top-[2rem] w-[25rem] left-1/2 py-2 bg-gradient-to-t from-[#161616] to-[#232323] rounded-[1.1rem] flex items-center gap-[3rem] border-borderC border text-[#707070] justify-evenly z-[2000]">
+    <div className="fixed top-[2rem] w-[25rem] left-1/2 py-2 bg-gradient-to-t from-[#232323] to-[#161616] rounded-[1.1rem] flex items-center gap-[3rem] border-borderC border text-[#707070] justify-evenly z-[2000]">
       <Link
         href={"/campaign"}
         className={currentPathname === "/campaign" ? "link2-active" : "link"}>
@@ -40,6 +41,12 @@ const MainNavbar = (props: Props) => {
             : " text-textC hover:text-white  transition-all"
         }`}>
         <MdHomeFilled />
+        {/* <Image
+          src="./assets/svg/homeicon.svg"
+          alt="icon"
+          width={15}
+          height={15}
+        /> */}
       </Link>
     </div>
   );

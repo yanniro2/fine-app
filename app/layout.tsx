@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-[#191919] relative">
+      <body className="bg-[#191919] relative w-full h-full">
         <MainNavbar />
         {/* <Navbar /> */}
         {/* <BottomMenu /> */}

@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import navbarData from "../../data/navbarData.json";
+import navbarData from "../data/navbarData.json";
 import { CgPolaroid, CgFileDocument } from "react-icons/cg";
 import { FaNewspaper, FaAddressCard, FaMeta } from "react-icons/fa6";
 import { HiOutlineDocumentText } from "react-icons/hi";

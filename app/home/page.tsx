@@ -4,7 +4,7 @@ type Props = {};
 
 const page = (props: Props) => {
   return (
-    <div className="w-full h-full flex items-center justify-center">
+    <div className="w-[80vw] h-full flex items-center justify-center">
       <h1 className="text-4xl text-white">Home</h1>
     </div>
   );
