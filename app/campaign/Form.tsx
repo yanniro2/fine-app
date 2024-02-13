@@ -23,10 +23,12 @@ const From: FC = () => {
               {"group" in category ? (
                 <div className="w-full flex flex-col gap-1">
                   {/* <h2>{category.group}</h2> */}
-                  <div className="w-full grid grid-cols-2 gap-1">
+                  <div className="w-full grid grid-cols-2 gap-x-5">
                     {category.fields?.map((field, fieldIndex) => (
                       <div key={fieldIndex} className="flex flex-col w-full ">
-                        <label className="label">{field.label}</label>
+                        <label className="label" htmlFor={field.name}>
+                          {field.label}
+                        </label>
                         {/* Render input, select, or other appropriate UI components based on the field type */}
 
                         {field.type === "number" ? (
@@ -36,6 +38,7 @@ const From: FC = () => {
                             required={field.required}
                             className="border-element"
                             placeholder={`${field.sample}`}
+                            id={field.name}
                           />
                         ) : (
                           <input
@@ -44,6 +47,7 @@ const From: FC = () => {
                             required={field.required}
                             className="border-element"
                             placeholder={`${field.sample}`}
+                            id={field.name}
                           />
                         )}
                       </div>
@@ -52,7 +56,9 @@ const From: FC = () => {
                 </div>
               ) : (
                 <div className="flex flex-col">
-                  <label className="label">{category.label}</label>
+                  <label className="label" htmlFor={category.name}>
+                    {category.label}
+                  </label>
                   {/* Render input, select, or other appropriate UI components based on the category type */}
                   {category.type === "select" ? (
                     <select
@@ -73,6 +79,22 @@ const From: FC = () => {
                       id={category.name}
                       className="border-element"
                       placeholder={category.sample}></textarea>
+                  ) : category.type === "file" ? (
+                    <div className="">
+                      <input
+                        type={category.type}
+                        name={category.name}
+                        required={category.required}
+                        className="hidden"
+                        placeholder={category.sample}
+                        id={category.name}
+                      />
+                      <label
+                        htmlFor={category.name}
+                        className="flex items-center justify-between w-full border-element text-[#707070]">
+                        upload images <MdAdd />
+                      </label>
+                    </div>
                   ) : (
                     <input
                       type={category.type}
@@ -80,6 +102,7 @@ const From: FC = () => {
                       required={category.required}
                       className="border-element"
                       placeholder={category.sample}
+                      id={category.name}
                     />
                   )}
                 </div>
