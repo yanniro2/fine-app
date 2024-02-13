@@ -69,7 +69,7 @@
     {
       "name": "heading",
       "label": "Heading",
-      "type": "text",
+      "type": "textarea",
       "required": true
     },
     {
