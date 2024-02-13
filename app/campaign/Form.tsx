@@ -1,58 +1,65 @@
-import React from "react";
+import React, { FC } from "react";
 import formData from "../../data/campaignForm.json";
-interface CampaignFormField {
-  name: string;
-  label: string;
-  type: string;
-  required: boolean;
-  options?: string[];
-}
 
-interface CampaignFormProps {
-  campaignCategories: CampaignFormField[];
-}
-
-type Props = {};
-
-const CampaignForm: React.FC = ({}: Props) => {
+const From: FC = () => {
   return (
-    <form className="w-full h-full flex flex-col justify-between p-5">
-      {formData.campaignCategories.map((field) => (
-        <div key={field.name} className="w-full flex flex-col">
-          <label htmlFor={field.name}>{field.label}</label>
-          {field.type === "select" ? (
-            <select id={field.name} name={field.name} required={field.required}>
-              {field.options?.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-          ) : field.type === "textarea" ? (
-            <textarea
-              id={field.name}
-              name={field.name}
-              required={field.required}></textarea>
-          ) : field.type === "file" ? (
-            <input
-              type="file"
-              id={field.name}
-              name={field.name}
-              required={field.required}
-            />
+    <div className="flex flex-col w-full h-full p-5">
+      {formData.campaignCategories.map((category, index) => (
+        <div key={index} className="flex flex-col w-full">
+          {"group" in category ? (
+            <div className="w-full flex flex-col ">
+              <h2>{category.group}</h2>
+              <div className="w-full flex items-center">
+                {category.fields?.map((field, fieldIndex) => (
+                  <div key={fieldIndex} className="flex flex-col w-full ">
+                    <label>{field.label}</label>
+                    {/* Render input, select, or other appropriate UI components based on the field type */}
+                    {field.type === "number" ? (
+                      <input
+                        type="number"
+                        name={field.name}
+                        required={field.required}
+                        className="w-fit"
+                      />
+                    ) : (
+                      <input
+                        type="text"
+                        name={field.name}
+                        required={field.required}
+                      />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
           ) : (
-            <input
-              type={field.type}
-              id={field.name}
-              name={field.name}
-              required={field.required}
-            />
+            <div className="flex flex-col">
+              <label>{category.label}</label>
+              {/* Render input, select, or other appropriate UI components based on the category type */}
+              {category.type === "select" ? (
+                <select name={category.name}>
+                  <option value="" disabled>
+                    Select an option
+                  </option>
+                  {category.options?.map((option, optionIndex) => (
+                    <option key={optionIndex} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <input
+                  type={category.type}
+                  name={category.name}
+                  required={category.required}
+                />
+              )}
+            </div>
           )}
         </div>
       ))}
-      <button type="submit">Submit</button>
-    </form>
+    </div>
   );
 };
 
-export default CampaignForm;
+export default From;

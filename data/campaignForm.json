@@ -7,34 +7,44 @@
       "required": true
     },
     {
-      "name": "bedrooms",
-      "label": "Number of Bedrooms",
-      "type": "number",
-      "required": true
+      "group": "propertyDetails",
+      "fields": [
+        {
+          "name": "bedrooms",
+          "label": "Bedrooms",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "bathrooms",
+          "label": "Bathrooms",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "garage",
+          "label": "Garage",
+          "type": "number",
+          "required": false
+        }
+      ]
     },
     {
-      "name": "bathrooms",
-      "label": "Number of Bathrooms",
-      "type": "number",
-      "required": true
-    },
-    {
-      "name": "garage",
-      "label": "Number of Garage Spaces",
-      "type": "number",
-      "required": false
-    },
-    {
-      "name": "landSize",
-      "label": "Land Size (sqft)",
-      "type": "number",
-      "required": true
-    },
-    {
-      "name": "buildingSize",
-      "label": "Building Size (sqft)",
-      "type": "number",
-      "required": true
+      "group": "landSize",
+      "fields": [
+        {
+          "name": "landSize",
+          "label": "Land Size",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "buildingSize",
+          "label": "Building Size",
+          "type": "number",
+          "required": true
+        }
+      ]
     },
     {
       "name": "propertyStatus",
@@ -46,7 +56,8 @@
     {
       "name": "agent",
       "label": "Agent",
-      "type": "text",
+      "type": "select",
+      "options": ["rhys gebethner"],
       "required": true
     },
     {
