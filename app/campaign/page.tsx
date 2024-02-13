@@ -1,13 +1,58 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import campaignData from "../../data/campaignData.json";
 import Image from "next/image";
+
 type Props = {};
 
-const page = (props: Props) => {
+const Page = (props: Props) => {
+  const [sortOption, setSortOption] = useState<string>("name");
+  const [searchQuery, setSearchQuery] = useState<string>("");
+
+  const sortedCampaigns = campaignData.campaigns.sort((a, b) => {
+    if (sortOption === "name") {
+      return a.name.localeCompare(b.name);
+    } else if (sortOption === "newest") {
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    } else if (sortOption === "oldest") {
+      return new Date(a.date).getTime() - new Date(b.date).getTime();
+    }
+    return 0;
+  });
+
+  const filteredCampaigns = sortedCampaigns.filter((campaign) =>
+    campaign.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="w-screen h-full flex items-center justify-center pl-[20vw] overflow-auto">
       <div className="w-full h-full pt-[8rem] p-5 flex flex-wrap  gap-5 justify-evenly">
-        {campaignData.campaigns.map((campaign, index) => (
+        <div className="flex items-center w-full justify-between text-white">
+          <div>
+            <label htmlFor="sort">Sort By:</label>
+            <select
+              id="sort"
+              value={sortOption}
+              onChange={(e) => setSortOption(e.target.value)}
+              className="border-element">
+              <option value="name">Name</option>
+              <option value="newest">Newest to Oldest</option>
+              <option value="oldest">Oldest to Newest</option>
+            </select>
+          </div>
+          <div>
+            <label htmlFor="search">Search:</label>
+            <input
+              type="text"
+              id="search"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="border-element"
+            />
+          </div>
+        </div>
+
+        {filteredCampaigns.map((campaign, index) => (
           <div
             key={index}
             className="text-white w-[22rem] h-[14rem] rounded-xl  relative overflow-hidden cursor-pointer  transition-all border-2 hover:border-white hover:scale-105  border-transparent group ">
@@ -15,8 +60,6 @@ const page = (props: Props) => {
               {campaign.address}
             </div>
 
-            {/* {campaign.address} */}
-            {/* {campaign.date} */}
             <Image
               src={campaign.image}
               alt={campaign.name}
@@ -31,4 +74,4 @@ const page = (props: Props) => {
   );
 };
 
-export default page;
+export default Page;
