@@ -72,10 +72,11 @@
 
 .font-Myanmar {
   font-family: "Myanmar Khyay", sans-serif;
+  font-weight: 400;
 }
 
 .sidemenu {
-  @apply w-[20vw] bg-gradient-to-t from-[#161616] to-[#232323] h-screen  drop-shadow-lg shadow-lg  flex justify-between flex-col text-textC;
+  @apply w-[20vw] bg-gradient-to-t from-[#161616] to-[#232323] h-screen  drop-shadow-lg shadow-lg  flex justify-between flex-col text-textC fixed top-0 left-0 bottom-0 z-[2000];
 }
 
 .submit {

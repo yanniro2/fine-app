@@ -1,0 +1,64 @@
+{
+  "campaigns": [
+    {
+      "name": "Winter Clothing Drive",
+      "address": "456 Frosty Lane, Snowtown",
+      "date": "2024-01-15",
+      "image": "/assets/img/campaign/img-1.jpeg"
+    },
+    {
+      "name": "Community Clean-Up",
+      "address": "789 Greenfield Ave, Cleanville",
+      "date": "2024-02-28",
+      "image": "/assets/img/campaign/img-2.jpeg"
+    },
+    {
+      "name": "Food Bank Fundraiser",
+      "address": "123 Harvest Blvd, Foodville",
+      "date": "2024-03-20",
+      "image": "/assets/img/campaign/img-3.jpeg"
+    },
+    {
+      "name": "Educational Workshop",
+      "address": "567 Knowledge Street, Learntown",
+      "date": "2024-04-10",
+      "image": "/assets/img/campaign/img-4.jpeg"
+    },
+    {
+      "name": "Health and Fitness Expo",
+      "address": "890 Wellness Lane, Fitcity",
+      "date": "2024-05-05",
+      "image": "/assets/img/campaign/img-5.jpeg"
+    },
+    {
+      "name": "Arts and Crafts Fair",
+      "address": "234 Creativity Ave, Artsville",
+      "date": "2024-06-18",
+      "image": "/assets/img/campaign/img-6.jpeg"
+    },
+    {
+      "name": "Environmental Awareness Campaign",
+      "address": "678 Eco Street, Greenfield",
+      "date": "2024-07-22",
+      "image": "/assets/img/campaign/img-7.jpeg"
+    },
+    {
+      "name": "Senior Citizens Social Gathering",
+      "address": "901 Wisdom Lane, Eldertown",
+      "date": "2024-08-15",
+      "image": "/assets/img/campaign/img-8.jpeg"
+    },
+    {
+      "name": "Tech Expo",
+      "address": "345 Innovation Blvd, Techville",
+      "date": "2024-09-05",
+      "image": "/assets/img/campaign/img-9.jpeg"
+    },
+    {
+      "name": "Holiday Charity Bazaar",
+      "address": "678 Generosity Street, Givingtown",
+      "date": "2024-12-10",
+      "image": "/assets/img/campaign/img-10.jpeg"
+    }
+  ]
+}
