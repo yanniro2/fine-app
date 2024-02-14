@@ -7,7 +7,7 @@ interface PageProps {
 }
 
 const Page: NextPage<PageProps> = ({ params }) => {
-  return <div className="page-bg text-white">My Post: {params.slug}</div>;
+  return <div className="page text-white">My Post: {params.slug}</div>;
 };
 
 export default Page;

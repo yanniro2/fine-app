@@ -11,7 +11,7 @@ const App = () => {
     router.push("/home"); // Adjust the path accordingly
   }, [router]);
   return (
-    <div className="w-screen h-screen flex items-center justify-center relative">
+    <div className="">
       <Default />
     </div>
   );

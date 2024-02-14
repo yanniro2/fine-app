@@ -98,11 +98,17 @@
 }
 
 .page {
-  @apply w-screen h-screen flex items-center justify-center pl-[20vw] overflow-hidden relative  ;
+   
+  @apply w-screen h-screen flex items-center justify-center pl-[20vw] overflow-hidden relative bg-gradient-to-l from-[#1A1A1A] to-[#000000];
 }
 
 .page-bg {
-  @apply w-screen h-screen flex items-center justify-center pl-[20vw] overflow-hidden relative bg-[#1A1A1A];
+ 
+  @apply w-screen h-screen flex items-center justify-center pl-[20vw] overflow-hidden relative   bg-gradient-to-l from-[#1A1A1A] to-[#000000];
+}
+
+.bg-liner {
+   @apply bg-gradient-to-l from-[#1A1A1A] to-[#000000];
 }
 
 .li-nav {
