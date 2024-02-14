@@ -10,9 +10,9 @@ const Logo = (props: Props) => {
         <Image
           src="/assets/svg/logo.svg"
           alt="logo img"
-          className="w-2/3 drop-shadow shadow scale-90"
-          width={100}
-          height={100}
+          className=" drop-shadow shadow"
+          width={150}
+          height={150}
         />
         {/* <div className="flex items-center justify-center flex-col text-white text-center w-full drop-shadow-lg shadow-lg">
           <h1 className="text-6xl font-light tracking-[8px] font">fine</h1>

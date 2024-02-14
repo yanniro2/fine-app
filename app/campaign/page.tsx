@@ -62,7 +62,7 @@ const Page = (props: Props) => {
         {filteredCampaigns.map((campaign, index) => (
           <div
             key={index}
-            className="text-white w-[22rem] h-[14rem] rounded-xl  relative overflow-hidden cursor-pointer  transition-all border-2 hover:border-white hover:scale-105  border-transparent group ">
+            className="text-white w-[22rem] h-[14rem] rounded-xl  relative overflow-hidden cursor-pointer  transition-all border-2 hover:border-white hover:scale-105  border-transparent group drop-shadow hover:drop-shadow-lg">
             <div className="absolute bottom-3 left-1/2 right-0 z-50 -translate-x-1/2 w-3/4 text-center font-Myanmar  p-1  uppercase">
               {campaign.address}
             </div>
