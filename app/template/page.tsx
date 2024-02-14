@@ -1,13 +1,30 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import campaignData from "../../data/campaignData.json";
+import Image from "next/image";
 
 type Props = {};
 
-const page = (props: Props) => {
-  return (
-    <div className="w-[80vw] h-full flex items-center justify-center">
-      <h1 className="text-4xl text-white">Template</h1>
-    </div>
+const Page = (props: Props) => {
+  const [sortOption, setSortOption] = useState<string>("name");
+  const [searchQuery, setSearchQuery] = useState<string>("");
+
+  const sortedCampaigns = campaignData.campaigns.sort((a, b) => {
+    if (sortOption === "name") {
+      return a.name.localeCompare(b.name);
+    } else if (sortOption === "newest") {
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    } else if (sortOption === "oldest") {
+      return new Date(a.date).getTime() - new Date(b.date).getTime();
+    }
+    return 0;
+  });
+
+  const filteredCampaigns = sortedCampaigns.filter((campaign) =>
+    campaign.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  return <div className="page bg-[#1A1A1A]"></div>;
 };
 
-export default page;
+export default Page;

@@ -1,0 +1,28 @@
+{
+  "navbarLinks": [
+    {
+      "text": "Signboard",
+      "url": "/template/signboard"
+    },
+    {
+      "text": "Newspaper",
+      "url": "/template/newspaper"
+    },
+    {
+      "text": "Brochure",
+      "url": "/template/brochure"
+    },
+    {
+      "text": "Proposal",
+      "url": "/template/proposal"
+    },
+    {
+      "text": "Social Media",
+      "url": "/template/social-media"
+    },
+    {
+      "text": "Business Cards",
+      "url": "/template/business-cards"
+    }
+  ]
+}

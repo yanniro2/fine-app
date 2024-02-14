@@ -25,7 +25,7 @@ const Page = (props: Props) => {
   );
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center pl-[20vw] overflow-hidden relative">
+    <div className="page">
       {/* <Image
         src="/assets/img/gridLayout.png"
         width={1000}
