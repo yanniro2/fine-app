@@ -1,0 +1,22 @@
+{
+  "brochureSections": [
+    {
+      "title": "Single Custom Cut",
+      "image": "intro_image.jpg",
+      "linkUrl": "/template/brochure/single",
+      "numberOfPages": 2
+    },
+    {
+      "title": "Deluxe Magazine",
+      "image": "feature_image.jpg",
+      "linkUrl": "/template/brochure/deluxe",
+      "numberOfPages": 4
+    },
+    {
+      "title": "Deluxe Mega Magazine",
+      "image": "contact_image.jpg",
+      "linkUrl": "/template/brochure/mega",
+      "numberOfPages": 8
+    }
+  ]
+}

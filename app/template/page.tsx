@@ -24,7 +24,7 @@ const Page = (props: Props) => {
     campaign.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  return <div className="page bg-[#1A1A1A]"></div>;
+  return <div className="page-bg text-white">Template Page</div>;
 };
 
 export default Page;
