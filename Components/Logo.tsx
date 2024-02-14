@@ -10,7 +10,7 @@ const Logo = (props: Props) => {
         <Image
           src="/assets/svg/logo.svg"
           alt="logo img"
-          className="w-2/3 drop-shadow shadow scale-75"
+          className="w-2/3 drop-shadow shadow scale-90"
           width={100}
           height={100}
         />

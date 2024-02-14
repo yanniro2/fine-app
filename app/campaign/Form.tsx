@@ -23,7 +23,7 @@ const From: FC = () => {
               {"group" in category ? (
                 <div className="w-full flex flex-col gap-1">
                   {/* <h2>{category.group}</h2> */}
-                  <div className="w-full grid grid-cols-2 gap-x-5">
+                  <div className="w-full grid grid-cols-2 gap-x-[60px]">
                     {category.fields?.map((field, fieldIndex) => (
                       <div key={fieldIndex} className="flex flex-col w-full ">
                         <label className="label" htmlFor={field.name}>
@@ -36,7 +36,7 @@ const From: FC = () => {
                             type="number"
                             name={field.name}
                             required={field.required}
-                            className="border-element"
+                            className="border-element text-[#707070]"
                             placeholder={`${field.sample}`}
                             id={field.name}
                           />
@@ -45,7 +45,7 @@ const From: FC = () => {
                             type="text"
                             name={field.name}
                             required={field.required}
-                            className="border-element"
+                            className="border-element text-[#707070]"
                             placeholder={`${field.sample}`}
                             id={field.name}
                           />
@@ -77,7 +77,7 @@ const From: FC = () => {
                     <textarea
                       name={category.name}
                       id={category.name}
-                      className="border-element"
+                      className="border-element text-[#707070]"
                       placeholder={category.sample}></textarea>
                   ) : category.type === "file" ? (
                     <div className="">
@@ -100,7 +100,7 @@ const From: FC = () => {
                       type={category.type}
                       name={category.name}
                       required={category.required}
-                      className="border-element"
+                      className="border-element text-[#707070]"
                       placeholder={category.sample}
                       id={category.name}
                     />

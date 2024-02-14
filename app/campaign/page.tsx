@@ -25,7 +25,14 @@ const Page = (props: Props) => {
   );
 
   return (
-    <div className="w-screen h-full flex items-center justify-center pl-[20vw] overflow-auto">
+    <div className="w-screen h-full flex items-center justify-center pl-[20vw] overflow-auto relative">
+      {/* <Image
+        src="/assets/img/gridLayout.png"
+        width={1000}
+        height={800}
+        className="w-full h-full object-cover fixed z-0 top-0 left-0 right-0 bottom-0"
+        alt="bg-grid"
+      /> */}
       <div className="w-full h-full pt-[8rem] p-5 flex flex-wrap  gap-5 justify-evenly">
         <div className="flex items-center w-full justify-between text-white">
           <div>
@@ -34,7 +41,7 @@ const Page = (props: Props) => {
               id="sort"
               value={sortOption}
               onChange={(e) => setSortOption(e.target.value)}
-              className="border-element">
+              className="border-element ">
               <option value="name">Name</option>
               <option value="newest">Newest to Oldest</option>
               <option value="oldest">Oldest to Newest</option>
@@ -47,7 +54,7 @@ const Page = (props: Props) => {
               id="search"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="border-element"
+              className="border-element "
             />
           </div>
         </div>
@@ -56,7 +63,7 @@ const Page = (props: Props) => {
           <div
             key={index}
             className="text-white w-[22rem] h-[14rem] rounded-xl  relative overflow-hidden cursor-pointer  transition-all border-2 hover:border-white hover:scale-105  border-transparent group ">
-            <div className="absolute bottom-3 left-1/2 right-0 z-50 -translate-x-1/2 w-3/4 text-center font-Myanmar backdrop-blur-lg p-1 group-hover:backdrop-brightness-50 uppercase">
+            <div className="absolute bottom-3 left-1/2 right-0 z-50 -translate-x-1/2 w-3/4 text-center font-Myanmar  p-1  uppercase">
               {campaign.address}
             </div>
 
@@ -65,7 +72,7 @@ const Page = (props: Props) => {
               alt={campaign.name}
               width={1000}
               height={1000}
-              className="w-full h-full overflow-hidden object-cover group-hover:brightness-50 transition-all"
+              className="w-full h-full overflow-hidden object-cover group-hover:brightness-50 transition-all brightness-75"
             />
           </div>
         ))}

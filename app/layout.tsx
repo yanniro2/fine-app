@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/Components/Navbar";
 import MainNavbar from "./MainNavbar";
 import BottomMenu from "@/Components/BottomMenu";
+import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-[#191919] relative w-full h-full">
+        <Image
+          src="/assets/img/gridLayout.png"
+          width={1000}
+          height={800}
+          className="w-full h-full object-cover fixed z-0 top-0 left-0 right-0 bottom-0"
+          alt="bg-grid"
+        />
         <MainNavbar />
         {/* <Navbar /> */}
         {/* <BottomMenu /> */}

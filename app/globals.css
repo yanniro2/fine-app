@@ -56,7 +56,7 @@
 .border-element {
   font-family: "Myanmar Khyay", sans-serif;
   font-weight: 400;
-  @apply bg-transparent border-borderC border  rounded-xl capitalize outline-none p-1 text-[.9rem] px-2;
+  @apply bg-transparent border-borderC border  rounded-xl capitalize outline-none p-1 text-[.9rem] px-2 placeholder:text-[#707070];
 }
 
 .button-glow {
