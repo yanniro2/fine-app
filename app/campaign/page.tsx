@@ -33,9 +33,9 @@ const Page = (props: Props) => {
         className="w-full h-full object-cover fixed z-0 top-0 left-0 right-0 bottom-0"
         alt="bg-grid"
       /> */}
-      <div className="w-full h-full pt-[8rem] p-5 ">
-        <div className="w-full flex items-center justify-between text-white my-5">
-          <div>
+      <div className="w-full h-full pt-[8rem] ">
+        <div className="w-full flex items-center justify-between text-white my-5 px-3">
+          <div className="">
             <label htmlFor="sort">Sort By:</label>
             <select
               id="sort"
@@ -59,7 +59,7 @@ const Page = (props: Props) => {
           </div>
         </div>
 
-        <div className="w-full h-full overflow-scroll flex flex-wrap  gap-5 justify-evenly pb-[4rem]">
+        <div className="w-full h-full overflow-scroll flex flex-wrap  gap-5 justify-evenly pb-[5rem] pt-3">
           {filteredCampaigns.map((campaign, index) => (
             <div
               key={index}
