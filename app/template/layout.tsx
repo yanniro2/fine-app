@@ -14,13 +14,6 @@ export default function RootLayout({
 }>) {
   return (
     <section className="w-screen h-screen flex">
-      <Image
-        src="/assets/img/gridLayout.png"
-        width={1000}
-        height={800}
-        className="w-full h-full object-cover fixed z-0 top-0 left-0 right-0 bottom-0 opacity-60"
-        alt="bg-grid"
-      />
       <Sidebar />
       {children}
     </section>
