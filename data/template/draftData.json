@@ -1,0 +1,64 @@
+{
+  "drafts": [
+    {
+      "id": 1,
+      "template": "Signboard",
+      "heading": "Signboard Design Proposal",
+      "date": "2024-02-14",
+      "time": "15:30",
+      "details": "Proposal for designing a new signboard for XYZ Company's storefront.",
+      "imageUrl": "signboard_proposal.jpg",
+      "url": "/signboard-proposal"
+    },
+    {
+      "id": 2,
+      "template": "Newspaper",
+      "heading": "Newspaper Advertisement Draft",
+      "date": "2024-02-15",
+      "time": "10:45",
+      "details": "Draft for an advertisement to be published in a local newspaper.",
+      "imageUrl": "newspaper_ad_draft.jpg",
+      "url": "/newspaper-ad-draft"
+    },
+    {
+      "id": 3,
+      "template": "Brochure",
+      "heading": "Brochure Design Concept",
+      "date": "2024-02-16",
+      "time": "18:00",
+      "details": "Conceptual design for a new brochure showcasing company products.",
+      "imageUrl": "brochure_design_concept.jpg",
+      "url": "/brochure-design-concept"
+    },
+    {
+      "id": 4,
+      "template": "Proposal",
+      "heading": "Business Proposal for Client X",
+      "date": "2024-02-17",
+      "time": "14:00",
+      "details": "Proposal outlining services to be provided to Client X for their project.",
+      "imageUrl": "proposal_for_client_x.jpg",
+      "url": "/business-proposal"
+    },
+    {
+      "id": 5,
+      "template": "Social Media",
+      "heading": "Social Media Campaign Plan",
+      "date": "2024-02-18",
+      "time": "09:00",
+      "details": "Draft plan for an upcoming social media marketing campaign.",
+      "imageUrl": "social_media_campaign_plan.jpg",
+      "url": "/social-media-campaign-plan"
+    },
+    {
+      "id": 6,
+      "template": "Business Card",
+      "heading": "Business Card Design Draft",
+      "date": "2024-02-19",
+      "time": "12:30",
+      "details": "Draft design for new business cards for company employees.",
+      "imageUrl": "business_card_design_draft.jpg",
+      "url": "/business-card-design-draft"
+    }
+  ]
+}
